@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF 2018 - Nostalgia Reborn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --brand-yellow: #FFCC00;
+            --brand-orange: #FF6600;
+            --brand-red: #E61E23;
+            --brand-dark: #0A0A0A;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Efeito Premium de Brilho nas Bordas */
+        .premium-container {
+            position: relative;
+            background: #000;
+            border-radius: 24px;
+            padding: 5px; /* Espessura da borda animada */
+            overflow: hidden;
+            width: 100%;
+        }
+        .premium-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                var(--brand-yellow), 
+                var(--brand-orange), 
+                var(--brand-red), 
+                transparent 40%
+            );
+            animation: rotate_border 3s linear infinite;
+        }
+        .video-wrapper {
+            position: relative;
+            z-index: 10;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        @keyframes rotate_border {
+            100% { transform: rotate(360deg); }
+        }
+
+        .text-stroke-1 {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+            color: transparent;
+        }
+        
+        .bg-grid {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Efeito de Glow Profissional */
+        .glow-effect {
+            box-shadow: 0 0 60px rgba(255, 204, 0, 0.25);
+        }
+
+        /* Hero Animation */
+        .hero-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Overlay para ativar som */
+        .sound-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-[10px];
+            font-weight: 900;
+            color: var(--brand-yellow);
+            z-index: 30;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            border: 1px border var(--brand-yellow);
+            animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="selection:bg-yellow-400 selection:text-black">
+
+    <!-- Header Fixo -->
+    <header class="fixed top-0 w-full z-[100] bg-[#0A0A0A]/90 backdrop-blur-2xl border-b border-white/5 px-6 py-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-yellow px-3 py-1.5 rounded-md -rotate-3 shadow-xl">
+                    <span class="text-black font-black italic tracking-tighter text-xl leading-none">FF2018</span>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="font-display font-black uppercase tracking-widest text-[#555] block text-[8px] leading-none">Projeto Master</span>
+                    <span class="font-display font-bold uppercase tracking-[0.2em] text-white">Nostalgia PRO</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-yellow bg-brand-yellow/10 px-4 py-2 rounded-full border border-brand-yellow/30 animate-pulse">
+                <i data-lucide="activity" class="w-3 h-3"></i> SERVIDORES 100% ONLINE
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - FULL SIZE -->
+    <section class="relative min-h-screen pt-32 pb-20 overflow-hidden flex flex-col items-center justify-start text-center bg-grid px-4">
+        
+        <!-- VIDEO HERO - BEM GRANDE -->
+        <div class="w-full max-w-5xl mx-auto mb-12 hero-float relative">
+            <div class="premium-container glow-effect">
+                <div class="video-wrapper aspect-video">
+                    <div class="sound-overlay">
+                        <i data-lucide="volume-2" class="w-4 h-4"></i> CLIQUE NO PLAYER PARA ATIVAR O SOM
+                    </div>
+                    <!-- 
+                        PARAMS VIMEO: 
+                        autoplay=1: Tenta iniciar sozinho
+                        loop=1: Loop infinito
+                        controls=0: Tira todos os controles (pause, timeline, etc)
+                        muted=1: Começa mudo apenas para garantir o autoplay. O usuário clica para som.
+                        autopause=0: Não para se mudar de aba.
+                    -->
+                    <iframe
+                        src="https://player.vimeo.com/video/1183971685?autoplay=1&loop=1&controls=0&autopause=0&muted=1"
+                        class="absolute inset-0 w-full h-full border-0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        title="FF Nostalgia Intro">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo Hero -->
+        <div class="max-w-2xl mx-auto relative z-10 px-4">
+            <div class="inline-block bg-brand-red text-white text-[10px] sm:text-[12px] font-black uppercase tracking-[0.3em] px-5 py-2 mb-8 -skew-x-12 shadow-lg">
+                OS MELHORES ANOS DA NOSSA VIDA
+            </div>
+            <h1 class="font-display text-6xl sm:text-8xl font-black uppercase italic leading-[0.8] mb-8 tracking-tighter">
+                <span class="text-brand-yellow">O MAPA</span> <br>
+                ERA <span class="text-stroke-1 opacity-80">NOSSO.</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-300 max-w-lg mx-auto mb-12 leading-tight font-medium">
+                Você ainda sente o arrepio da música original? <br>
+                <span class="text-brand-yellow font-black italic block mt-3 uppercase tracking-tighter"> O BOOYAH VOLTOU A TER VALOR. </span> 
+            </p>
+        </div>
+
+        <div class="mt-8 animate-bounce">
+            <i data-lucide="chevron-down" class="text-brand-yellow w-8 h-8 opacity-50"></i>
+        </div>
+    </section>
+
+    <!-- Seção de Prova Real - RAIZ -->
+    <section class="py-24 bg-zinc-950 border-y border-white/5 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl sm:text-6xl font-display font-black uppercase italic mb-12 tracking-tighter">
+                SENTIMENTO <span class="text-brand-yellow italic">RAIZ</span>
+            </h2>
+            
+            <!-- Video Raiz - GRANDE -->
+            <div class="premium-container glow-effect mx-auto">
+                <div class="video-wrapper aspect-video">
+                    <iframe
+                        src="https://player.vimeo.com/video/1183971661?autoplay=0&loop=1&controls=0&autopause=0"
+                        class="absolute inset-0 w-full h-full border-0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        title="Gameplay Nostalgia">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[ "Sem Skins de Atributo", "Sons Originais", "Bermuda Raiz", "Lobby 2018" ].map(text => (
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-xl text-[10px] font-black uppercase tracking-wider text-brand-yellow italic">
+                        {text}
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Fechamento / Preço -->
+    <section class="py-32 bg-brand-yellow text-black relative px-6 overflow-hidden">
+        <div class="absolute -right-20 -top-20 opacity-5 pointer-events-none">
+            <i data-lucide="trophy" style="width: 500px; height: 500px"></i>
+        </div>
+        
+        <div class="max-w-xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-3 bg-[#0A0A0A] text-white px-6 py-2 rounded-full text-[12px] font-black uppercase mb-10 shadow-2xl">
+                <span class="h-2.5 w-2.5 rounded-full bg-brand-red animate-ping"></span>
+                AIRDROP DISPONÍVEL: LIBERAÇÃO IMEDIATA
+            </div>
+
+            <h2 class="text-7xl sm:text-9xl font-display font-black uppercase italic leading-[0.7] mb-12 tracking-tighter">
+                VOLTE NO <br>
+                <span class="text-stroke-1" style="-webkit-text-stroke: 2px #000">TEMPO.</span>
+            </h2>
+
+            <div class="bg-[#0A0A0A] text-white p-12 rounded-[50px] shadow-[0_30px_100px_rgba(0,0,0,0.4)] relative">
+                <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-brand-red px-10 py-3 rounded-full font-black italic text-md uppercase shadow-xl border-4 border-brand-yellow">
+                    ACROOT_2018
+                </div>
+                
+                <div class="flex items-center justify-center gap-4 mb-6 opacity-40">
+                    <span class="text-2xl font-bold line-through">R$ 97,90</span>
+                    <span class="bg-white/10 p-1 rounded text-[10px] font-black uppercase">Desconto Nostalgia</span>
+                </div>
+                
+                <div class="text-8xl sm:text-9xl font-display font-black italic mb-12 tracking-tighter text-brand-yellow">R$ 38,90</div>
+                
+                <a href="COLOQUE_SEU_LINK_AQUI" target="_blank" class="w-full bg-brand-yellow text-black py-8 rounded-[30px] font-black italic text-3xl flex items-center justify-center gap-5 hover:bg-white transition-all shadow-[0_20px_60px_rgba(255,204,0,0.3)] hover:-translate-y-2 active:scale-95 group">
+                    QUERO MEU BOOYAH!
+                    <i data-lucide="trophy" class="w-10 h-10 group-hover:rotate-[15deg] transition-transform"></i>
+                </a>
+                
+                <div class="mt-10 flex flex-wrap justify-center gap-6 opacity-30">
+                    <div class="flex items-center gap-2 text-[10px] font-black uppercase">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-brand-yellow"></i> Compra Segura
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] font-black uppercase">
+                        <i data-lucide="zap" class="w-4 h-4 text-brand-yellow"></i> Acesso Imediato
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] font-black uppercase">
+                        <i data-lucide="smartphone" class="w-4 h-4 text-brand-yellow"></i> Roda em Todos Celulares
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Invisível Premium -->
+    <footer class="py-12 bg-black text-center border-t border-white/5 opacity-20">
+        <p class="text-[10px] uppercase font-black tracking-[0.5em]">2018 FOREVER &bull; RAÍZ SQUAD</p>
+    </footer>
+
+    <script>
+        // Inicializa ícones Lucide
+        lucide.createIcons();
+
+        // Como o som automático é bloqueado, adicionamos um evento simples:
+        // Se o usuário clicar em qualquer lugar da página, o player poderia unmutar via API,
+        // mas aqui mantemos o iframe simples com o aviso visual para o player.
+    </script>
+</body>
+</html>
