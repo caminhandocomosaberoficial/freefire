@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF 2018 - Nostalgia Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --brand-yellow: #FFCC00;
+            --brand-orange: #FF6600;
+            --brand-red: #E61E23;
+            --brand-dark: #0A0A0A;
+        }
+        body {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .text-brand-yellow { color: var(--brand-yellow); }
+        .bg-brand-yellow { background-color: var(--brand-yellow); }
+        .bg-brand-red { background-color: var(--brand-red); }
+        .bg-brand-dark { background-color: var(--brand-dark); }
+        .text-stroke-1 {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            color: transparent;
+        }
+        .bg-grid {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+        }
+        .skew-10 { transform: skewX(-10deg); }
+        .rotate-2 { transform: rotate(-2deg); }
+    </style>
+</head>
+<body class="selection:bg-yellow-400 selection:text-black">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-brand-yellow px-2 py-1 rounded-sm rotate-2">
+                    <span class="text-black font-black italic tracking-tighter">FF2018</span>
+                </div>
+                <span class="font-display font-bold uppercase tracking-widest hidden sm:inline">Nostalgia Edition</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-tighter text-brand-yellow animate-pulse">
+                <i data-lucide="activity" class="w-3 h-3"></i> SERVIDORES ONLINE
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] pt-32 pb-12 overflow-hidden flex flex-col items-center justify-center text-center bg-grid">
+        <div class="w-full max-w-lg mx-auto px-6 mb-8 transform -rotate-1">
+            <div class="relative aspect-video rounded-2xl overflow-hidden border-2 border-brand-yellow shadow-[0_0_40px_rgba(255,204,0,0.1)] bg-black">
+                <iframe
+                    src="https://player.vimeo.com/video/1183971685?autoplay=1&muted=1&loop=1&background=1"
+                    class="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent pointer-events-none"></div>
+            </div>
+        </div>
+
+        <div class="max-w-lg mx-auto px-6 relative z-10">
+            <div class="inline-block bg-brand-red text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 mb-4 skew-10">
+                O free fire era mais feliz
+            </div>
+            <h1 class="font-display text-5xl font-black uppercase leading-[0.9] italic mb-6">
+                <span class="text-brand-yellow">O MAPA</span> <br>
+                BERMUDA <br>
+                <span class="text-stroke-1">ERA NOSSO.</span>
+            </h1>
+            <p class="text-lg text-gray-300 max-w-sm mx-auto mb-8 leading-relaxed">
+                Sente o arrepio? É a música original de 2018. 
+                <span class="text-brand-yellow font-bold italic text-sm block mt-2"> Lembra de quando ganhar um Booyah era a melhor sensação do mundo? </span> 
+                Isso não precisa ser apenas uma lembrança.
+            </p>
+            
+            <div class="flex flex-col items-center gap-6">
+                <div class="flex -space-x-3 mb-2">
+                    <img src="https://picsum.photos/seed/face1/48/48" class="w-10 h-10 rounded-full border-2 border-zinc-900 shadow-xl" alt="Survivor">
+                    <img src="https://picsum.photos/seed/face2/48/48" class="w-10 h-10 rounded-full border-2 border-zinc-900 shadow-xl" alt="Survivor">
+                    <img src="https://picsum.photos/seed/face3/48/48" class="w-10 h-10 rounded-full border-2 border-zinc-900 shadow-xl" alt="Survivor">
+                    <img src="https://picsum.photos/seed/face4/48/48" class="w-10 h-10 rounded-full border-2 border-zinc-900 shadow-xl" alt="Survivor">
+                    <div class="w-10 h-10 rounded-full bg-orange-600 border-2 border-zinc-900 flex items-center justify-center text-[10px] font-black shadow-xl">+4k</div>
+                </div>
+                <p class="text-[10px] font-black uppercase tracking-widest text-gray-500 italic">4.291 Sobreviventes jogando agora</p>
+            </div>
+        </div>
+
+        <div class="mt-12 animate-bounce flex flex-col items-center gap-2">
+            <span class="text-[10px] font-black uppercase tracking-widest text-brand-yellow">Deslize para ver</span>
+            <i data-lucide="chevron-right" class="rotate-90 text-brand-yellow w-5 h-5"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-[#0A0A0A] border-t border-white/5">
+        <div class="max-w-lg mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-display font-black uppercase italic mb-4">
+                    O QUE <span class="text-brand-yellow">VOCÊ GANHA</span>
+                </h2>
+                <div class="h-1 w-12 bg-brand-yellow mx-auto"></div>
+            </div>
+
+            <div class="grid gap-6">
+                <div class="bg-zinc-900 border border-white/5 p-8 rounded-xl">
+                    <div class="w-14 h-14 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="server" class="text-brand-yellow w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-black uppercase italic mb-4">Servidor Dedicado</h3>
+                    <p class="text-gray-400 leading-relaxed">Habilitado para o modo online em 2024 na versão antiga.</p>
+                </div>
+                <div class="bg-zinc-900 border border-white/5 p-8 rounded-xl">
+                    <div class="w-14 h-14 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="globe" class="text-brand-yellow w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-black uppercase italic mb-4">Global & Online</h3>
+                    <p class="text-gray-400 leading-relaxed">Entre em salas reais e sinta a adrenalina do servidor original.</p>
+                </div>
+                <div class="bg-zinc-900 border border-white/5 p-8 rounded-xl">
+                    <div class="w-14 h-14 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="text-brand-yellow w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-black uppercase italic mb-4">Puro Nostalgia</h3>
+                    <p class="text-gray-400 leading-relaxed">As skins, os sons e a interface original prontos para você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Video -->
+    <section class="py-20 bg-zinc-950 relative overflow-hidden">
+        <div class="max-w-lg mx-auto px-6 text-center">
+            <h2 class="text-4xl font-display font-black uppercase italic mb-8">
+                POR QUE <span class="text-brand-yellow">2018?</span>
+            </h2>
+            <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl mb-10">
+                <iframe
+                    src="https://player.vimeo.com/video/1183971661?autoplay=1&muted=1&loop=1&background=1"
+                    class="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-32 bg-brand-yellow text-black overflow-hidden relative">
+        <div class="max-w-lg mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-[#0A0A0A] text-white px-4 py-1 rounded-full text-[10px] font-black uppercase mb-6">
+                <span class="h-2 w-2 rounded-full bg-red-600 animate-ping"></span>
+                Airdrop Detectado: Promoção Ativa
+            </div>
+
+            <h2 class="text-6xl font-display font-black uppercase italic leading-none mb-4">OFERTA LIMITADA</h2>
+            <div class="bg-[#0A0A0A] text-white p-10 rounded-3xl shadow-2xl relative mt-8">
+                <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-red-600 px-6 py-2 rounded-full font-black italic text-sm uppercase">
+                    Melhor Preço
+                </div>
+                <div class="text-7xl font-display font-black italic mb-8">R$ 38,90</div>
+                <a href="COLOQUE_SEU_LINK_AQUI" target="_blank" class="w-full bg-brand-yellow text-black py-6 rounded-xl font-black italic text-2xl flex items-center justify-center gap-4 hover:bg-white transition-all shadow-xl active:scale-95">
+                    EU QUERO MEU BOOYAH!
+                    <i data-lucide="trophy" class="w-8 h-8"></i>
+                </a>
+                <p class="mt-6 text-[10px] text-gray-500 font-bold uppercase tracking-wider">
+                    Pagamento Único • Liberação Imediata
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
